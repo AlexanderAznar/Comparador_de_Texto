@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Comparador" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Configuración común para ambos estilos -->
+        <item name="colorButtonNormal">@color/statusBarColor</item>
+    </style>
+    <style name="Theme.Comparador" parent="Base.Theme.Comparador">
+        <item name="android:navigationBarColor">@android:color/darker_gray</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+    </style>
+
+</resources>

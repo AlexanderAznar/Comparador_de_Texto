@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:textAlignment="center"
+    android:background="@drawable/gradient_background">
+
+    <!-- Vista de espacio en la parte superior para centrar verticalmente los elementos -->
+    <Space
+        android:id="@+id/topSpace"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true" />
+
+    <!-- Toolbar en la parte superior -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignRight="@id/socialIconsLayout"
+        android:background="@drawable/toolbar_rounded_background"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:navigationIcon="@drawable/compare_icon">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:orientation="vertical">
+
+        <!-- EditText 1 -->
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_texto1"
+            android:importantForAutofill="no"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColorHint"
+            android:textSize="22sp"
+            tools:ignore="TextFields,VisualLintTextFieldSize" />
+
+        <!-- EditText 2 -->
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/hint_texto2"
+            android:importantForAutofill="no"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColorHint"
+            android:textSize="22sp"
+            tools:ignore="TextFields,VisualLintTextFieldSize" />
+
+        <!-- Botón Comparar -->
+
+        <Button
+            android:id="@+id/compareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/compare_button_text"
+            android:textSize="26sp"
+            android:visibility="visible"
+            tools:ignore="VisualLintButtonSize"
+            tools:visibility="visible"
+            android:backgroundTint="@color/statusBarColor"/>
+
+
+        <!-- TextView Resultado -->
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/resultado_text"
+            android:textAlignment="center"
+            android:textColor="@color/resultTextColor"
+            android:textSize="26sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:text="@string/by_alexander_aznar"
+        android:textColor="@color/bottomTextColor" />
+
+        <!-- Layout para los íconos sociales en la parte inferior -->
+    <LinearLayout
+        android:id="@+id/socialIconsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Icono de LinkedIn -->
+        <ImageView
+            android:id="@+id/linkedinIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/linkedin_description"
+            android:focusable="true"
+            android:onClick="openLinkedInProfile"
+
+            android:src="@drawable/linkedin_icon"
+            tools:ignore="UsingOnClickInXml,ImageContrastCheck" />
+
+        <!-- Icono de GitHub -->
+        <ImageView
+            android:id="@+id/githubIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/github_description"
+            android:focusable="true"
+            android:onClick="openGitHubProfile"
+            android:src="@drawable/github_icon"
+            tools:ignore="UsingOnClickInXml,ImageContrastCheck" />
+    </LinearLayout>
+
+    </RelativeLayout>
